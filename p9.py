@@ -1,5 +1,9 @@
 data = open("input/p9", "rb").read().decode()
 
+import time
+
+start = time.time()
+
 nums = [int(x.strip()) for x in data.split('\n') if x and x.strip()]
 
 def find_sum(target, interval):
@@ -27,3 +31,6 @@ for i in range(25, len(nums)):
             print(f"part 2: {in_order[0]} (min) + {in_order[-1]} (max) = {in_order[0] + in_order[-1]}")
         break
 
+end = time.time()
+
+print(f"total duration: {end-start:6.5f}")
